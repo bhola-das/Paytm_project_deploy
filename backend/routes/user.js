@@ -49,9 +49,11 @@ router.post("/signup", async (req, res) => {
         balance: 1 + Math.random() * 10000
     })
 
-    const token = jwt.sign({
-        userId
-    }, JWT_SECRET);
+    const token = jwt.sign(
+        { userId },
+        JWT_SECRET,
+        { expiresIn: '1h' }
+    );
 
     res.json({
         message: "User created successfully",
@@ -82,9 +84,11 @@ router.post("/signin", async (req, res) => {
     if (user) {
         const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
         if (isPasswordValid) {
-            const token = jwt.sign({
-                userId: user._id
-            }, JWT_SECRET);
+            const token = jwt.sign(
+                { userId: user._id },
+                JWT_SECRET,
+                { expiresIn: '1h' }
+            );
 
             res.json({
                 token: token
