@@ -14,7 +14,7 @@ export const Balance = () => {
         const fetchUserData = async () => {
             try {
                 const balanceResponse = await axios.get(
-                    "http://localhost:3000/api/v1/account/balance",
+                    "https://paytm-project-deploy.onrender.com/api/v1/account/balance",
                     {
                         headers: {
                             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -23,7 +23,7 @@ export const Balance = () => {
                 );
 
                 const userResponse = await axios.get(
-                    "http://localhost:3000/api/v1/user/profile",
+                    "https://paytm-project-deploy.onrender.com/api/v1/user/profile",
                     {
                         headers: {
                             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -56,21 +56,21 @@ export const Balance = () => {
                     <p className="text-lg">Your balance is <span className="font-bold">₹{balance.toFixed(2)}</span></p>
                 </div>
                 <div className="flex justify-between gap-2  pt-4" >
-                    <div className=" "> 
-                    <button className="bg-blue-800 text-white text-sm px-2 py-2 rounded-md"  
-                     onClick={() => navigate("/deposit")} 
-                     >Deposit money</button>
+                    <div className=" ">
+                        <button className="bg-blue-800 text-white text-sm px-2 py-2 rounded-md"
+                            onClick={() => navigate("/deposit")}
+                        >Deposit money</button>
                     </div>
-                     <div className="">
-                     <button className="bg-blue-800 text-white text-sm px-2 py-2 rounded-md"  
-                     onClick={() => navigate("/transactions")} 
-                     >View Transaction history</button>
-                     </div>
-               </div>
-              
+                    <div className="">
+                        <button className="bg-blue-800 text-white text-sm px-2 py-2 rounded-md"
+                            onClick={() => navigate("/transactions")}
+                        >View Transaction history</button>
+                    </div>
+                </div>
+
             </div>
-            
+
         </div>
-        
+
     );
 };

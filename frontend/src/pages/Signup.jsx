@@ -17,15 +17,15 @@ export const Signup = () => {
         <div className="flex items-center justify-center h-full bg-gray-200 p-4">
             <div className=" container w-96 p-4 md:p-8 bg-gray-200 rounded-lg shadow-[7px_7px_10px_white,-7px_-7px_10px_rgba(0,0,0,0.1)]">
                 <div className="flex items-center justify-center flex-col gap-1">
-                <div className="flex flex-col justify-center h-full ml-4">
-         <div className="w-full">
-         <img src="https://www.shutterstock.com/image-vector/kerala-india-may-08-2023-260nw-2304421791.jpg" alt="" />
-         </div>
-        </div>
-                <Heading label={"Sign up"} />
-                <p className="pb-5 text-gray-600 ">Enter your information to create an account!</p>
+                    <div className="flex flex-col justify-center h-full ml-4">
+                        <div className="w-full">
+                            <img src="https://www.shutterstock.com/image-vector/kerala-india-may-08-2023-260nw-2304421791.jpg" alt="" />
+                        </div>
+                    </div>
+                    <Heading label={"Sign up"} />
+                    <p className="pb-5 text-gray-600 ">Enter your information to create an account!</p>
                 </div>
-                
+
                 {/* Input Fields with CSS */}
                 <div>
                     <input
@@ -62,7 +62,7 @@ export const Signup = () => {
                 <div className="flex justify-center items-center mt-2">
                     <Button
                         onClick={async () => {
-                            const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
+                            const response = await axios.post("https://paytm-project-deploy.onrender.com/api/v1/user/signup", {
                                 username,
                                 firstName,
                                 lastName,

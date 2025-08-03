@@ -9,14 +9,14 @@ export const SendMoney = () => {
     const id = searchParams.get("id");
     const name = searchParams.get("name");
     const [amount, setAmount] = useState(0);
-    const [message, setMessage] = useState(""); 
-    const [username, setUsername] = useState(""); 
-    const [password, setPassword] = useState(""); 
-    const [balance, setBalance] = useState(""); 
+    const [message, setMessage] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [balance, setBalance] = useState("");
 
     const handleTransfer = async () => {
         try {
-            const response = await axios.post("http://localhost:3000/api/v1/account/transfer", {
+            const response = await axios.post("https://paytm-project-deploy.onrender.com/api/v1/account/transfer", {
                 to: id,
                 amount
             }, {
@@ -88,9 +88,9 @@ export const SendMoney = () => {
                             <div><BottomWarning label={"back to dashboard"} buttonText={"Back"} to={"/dashboard"} /></div>
                         </div>
                     </div>
-                    
+
                 </div>
-                 
+
             </div>
         </div>
     );
